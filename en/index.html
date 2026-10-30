@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sky Saver download</title><meta name="description" content="Download Sky Saver, a free Mac screen saver that paints a living sky (alpha)">
+<link rel="icon" href="../icon.png"><style>:root{--bg:#f6f7f9;--card:#fff;--text:#1d1f23;--muted:#5d636d;--line:#e2e5ea;--accent:#2f7de1;--accent-text:#fff;--code:#eef1f5}
+@media (prefers-color-scheme:dark){:root{--bg:#16181c;--card:#1f2228;--text:#e8eaee;--muted:#a0a6b0;--line:#30343c;--accent:#4c93ee;--accent-text:#fff;--code:#2a2e36}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif}
+main{max-width:680px;margin:0 auto;padding:40px 16px 56px}
+.lang{text-align:right;font-size:14px;margin:0 0 8px}
+a{color:var(--accent)}
+.head{display:flex;gap:18px;align-items:center;margin-bottom:24px}
+.head img{width:88px;height:88px;border-radius:20px;flex:none}
+h1{font-size:30px;margin:0;line-height:1.2}
+.head p{margin:4px 0 0;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 22px;margin:18px 0}
+.dl{display:inline-block;background:var(--accent);color:var(--accent-text);text-decoration:none;font-weight:600;font-size:17px;padding:12px 26px;border-radius:10px}
+.dl:hover{filter:brightness(1.08)}
+.meta{color:var(--muted);font-size:14px;margin:10px 0 0}
+h2{font-size:19px;margin:0 0 8px}
+ol,ul{padding-left:1.3em;margin:6px 0}
+pre{background:var(--code);border-radius:8px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.5;margin:10px 0}
+code{font-family:ui-monospace,Menlo,monospace}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+footer{color:var(--muted);font-size:14px;margin-top:28px}</style></head>
+<body><main>
+<p class="lang"><a href="../" lang="ja">日本語</a></p>
+<div class="head"><img src="../icon.png" alt="Sky Saver icon"><div><h1>Sky Saver</h1><p>A Mac screen saver that paints a living sky (free, alpha)</p></div></div>
+
+<div class="card">
+<a class="dl" href="https://github.com/satoo3/SkySaver-releases/releases/latest/download/SkySaver-mac.dmg">Download for Mac</a>
+<p class="meta" id="ver" data-fmt="Latest %v · dmg %s MB">Latest · dmg</p>
+<p class="meta">macOS 12 Monterey or later · Apple silicon and Intel · Notarized by Apple</p>
+</div>
+
+<div class="card">
+<h2>Installing</h2>
+<ol>
+<li>Open the downloaded dmg.</li>
+<li>Drag SkySaver to the Applications folder.</li>
+<li>Open SkySaver from the Applications folder and click 入れる (Install) when it asks to install the screen saver.</li>
+<li>Choose Sky Saver in System Settings → Screen Saver.</li>
+</ol>
+<p>Settings are changed in the SkySaver app, which is in Japanese only for now.</p>
+</div>
+
+<div class="card">
+<h2>About the alpha</h2>
+<p>This is a work in progress: looks and settings may change, and there may be bugs.</p>
+</div>
+
+<footer>
+<p><a href="https://www.ultrawarp.jp/skysaver/en/">Website</a> · <a href="https://www.ultrawarp.jp/skysaver/en/privacy/">Privacy policy</a> · <a href="https://github.com/satoo3/SkySaver-releases/releases">All versions</a><br>Contact: <a href="mailto:support@ultrawarp.jp">support@ultrawarp.jp</a></p>
+<p>© 2026 Ultrawarp</p>
+</footer>
+</main><script>
+fetch('https://api.github.com/repos/satoo3/SkySaver-releases/releases/latest').then(r=>r.ok?r.json():null).then(j=>{
+  if(!j)return;const a=(j.assets||[]).find(x=>x.name==='SkySaver-mac.dmg');
+  const v=document.getElementById('ver');v.textContent=v.dataset.fmt.replace('%v',j.tag_name.replace(/^v/,'')).replace('%s',a?(a.size/1048576).toFixed(1):'?');
+}).catch(()=>{});
+</script></body></html>
